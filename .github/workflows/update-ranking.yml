@@ -1,0 +1,77 @@
+# .github/workflows/update-ranking.yml
+# 龍北俱樂部排名自動更新工作流程
+
+name: 更新抽獎排名數據
+
+on:
+  # 手動觸發
+  workflow_dispatch:
+  
+  # 當Excel檔案更新時自動觸發
+  push:
+    paths:
+      - 'excel_files/**/*.xlsx'
+      - 'excel_files/**/*.xls'
+  
+  # 定時更新（每天早上8點）
+  schedule:
+    - cron: '0 0 * * *'  # UTC 0:00 = 台灣時間 08:00
+
+jobs:
+  update-ranking:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. 檢出代碼
+      - name: 檢出倉庫
+        uses: actions/checkout@v4
+        with:
+          # 需要完整歷史記錄來推送更改
+          fetch-depth: 0
+      
+      # 2. 設置Node.js環境
+      - name: 設置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      # 3. 安裝依賴
+      - name: 安裝依賴
+        run: |
+          npm install xlsx
+      
+      # 4. 處理Excel數據並生成JSON
+      - name: 處理數據並生成排名
+        run: |
+          node scripts/process-data.js excel_files data/ranking.json
+      
+      # 5. 檢查是否有變更
+      - name: 檢查變更
+        id: check_changes
+        run: |
+          if git diff --quiet data/ranking.json; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+      
+      # 6. 提交並推送變更
+      - name: 提交排名更新
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/ranking.json
+          git commit -m "🔄 自動更新排名數據 - $(date +'%Y-%m-%d %H:%M:%S')"
+          git push
+      
+      # 7. 部署到GitHub Pages
+      - name: 部署到 GitHub Pages
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
+          exclude_assets: 'excel_files/**,scripts/**,.github/**'

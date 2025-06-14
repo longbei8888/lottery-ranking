@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐉 龍北俱樂部【回饋活動】抽獎排名榜</title>
+    <meta name="description" content="龍北俱樂部回饋活動即時排名榜，總獎金價值突破十萬元！">
+    <meta property="og:title" content="🐉 龍北俱樂部【回饋活動】抽獎排名榜">
+    <meta property="og:description" content="總獎金價值突破十萬元！iPhone 16 Pro、Apple Watch等豪華獎品等你來抽！">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft JhengHei', '微軟正黑體', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            animation: twinkle 3s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stats-bar {
+            background: #f8f9fa;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            border-bottom: 3px solid #e9ecef;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+        
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .controls {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .refresh-btn {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(40, 167, 69, 0.3);
+        }
+        
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+        }
+        
+        .last-update {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .ranking-container {
+            padding: 30px;
+        }
+        
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #ddd;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        
+        .ranking-item:nth-child(n) {
+            animation-delay: calc(var(--index) * 0.05s);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .ranking-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .ranking-item.top3 {
+            background: linear-gradient(135deg, #fff9e6, #fff);
+            border-left-color: #ffd700;
+        }
+        
+        .ranking-item.top10 {
+            background: linear-gradient(135deg, #f0f8ff, #fff);
+            border-left-color: #4169e1;
+        }
+        
+        .rank-badge {
+            font-size: 1.5em;
+            font-weight: bold;
+            min-width: 60px;
+            text-align: center;
+            margin-right: 20px;
+        }
+        
+        .rank-badge.gold { color: #ffd700; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
+        .rank-badge.silver { color: #c0c0c0; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
+        .rank-badge.bronze { color: #cd7f32; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
+        
+        .player-info {
+            flex: 1;
+        }
+        
+        .player-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .player-details {
+            color: #666;
+            margin-bottom: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .club-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .club-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .club-badge.flower { background: linear-gradient(45deg, #ff9a9e, #fecfef); }
+        .club-badge.taiwan { background: linear-gradient(45deg, #a8edea, #fed6e3); }
+        .club-badge.black { background: linear-gradient(45deg, #667eea, #764ba2); }
+        
+        .player-breakdown {
+            font-size: 0.9em;
+            color: #888;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        .score-display {
+            text-align: center;
+            min-width: 120px;
+        }
+        
+        .score-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+        
+        .score-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .info-panel {
+            background: #f8f9fa;
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #ff6b6b;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .footer {
+            background: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .ranking-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .rank-badge {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .player-details {
+                justify-content: center;
+            }
+            
+            .controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐉 龍北俱樂部【回饋活動】抽獎排名榜 🔥</h1>
+            <div class="subtitle">📅 活動期間：2025/06/02 ～ 2025/06/29 | 🎁 總獎金價值突破十萬元！</div>
+        </div>
+        
+        <div class="controls">
+            <div class="last-update">
+                📊 最後更新時間：<span id="lastUpdate">載入中...</span>
+            </div>
+            <button class="refresh-btn" onclick="loadRankingData()">
+                🔄 重新整理排名
+            </button>
+        </div>
+        
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value" id="totalPlayers">-</div>
+                <div class="stat-label">📈 總參與玩家數</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="maxScore">-</div>
+                <div class="stat-label">🏆 最高積分</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">18</div>
+                <div class="stat-label">🎁 抽獎獎品總數</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="daysLeft">-</div>
+                <div class="stat-label">⏰ 活動剩餘天數</div>
+            </div>
+        </div>
+        
+        <div id="loadingSection" class="loading">
+            <div class="spinner"></div>
+            <div>正在載入最新排名數據...</div>
+        </div>
+        
+        <div class="ranking-container" id="rankingContainer" style="display: none;">
+            <!-- 排名會動態載入在這裡 -->
+        </div>
+        
+        <div class="info-panel">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h3>🎁 獎品資訊與活動規則</h3>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #ff6b6b;">
+                    <h4>🏆 主要獎品</h4>
+                    <p>🥇 iPhone 16 Pro 128GB ($36,900)<br>
+                    🥈 Apple Watch S10 GPS 42mm ($13,500)<br>
+                    🥉 AirPods 4 降噪版 ($5,990)<br>
+                    🎁 遊戲幣獎勵 2,000-500 點</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #ff6b6b;">
+                    <h4>🎲 積分計算</h4>
+                    <p>只計算現金桌有效手排數 × 模式倍率<br>
+                    ⚡ NLH: ×1.0<br>
+                    ⚡ PLO: ×1.0<br>
+                    ⚡ 十三支/MAU BINH: ×0.6<br>
+                    ⚡ OFC: ×0.7<br>
+                    ⚡ AoF: ×0.3<br>
+                    ❌ SNG/MTT 不參與計分</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #ff6b6b;">
+                    <h4>🏆 補償獎勵</h4>
+                    <p>積分排名前3名但未中獎者，可獲得3,000遊戲幣補償獎勵</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #ff6b6b;">
+                    <h4>📢 抽獎資訊</h4>
+                    <p>🗓️ 抽獎日期: 2025/07/05<br>
+                    📺 直播平台: IG @longbei_poker<br>
+                    🎯 抽獎方式: 依積分權重抽出<br>
+                    📋 每人限得一獎</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 龍北俱樂部 | 本活動最終解釋權歸龍北俱樂部所有</p>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+                📱 關注我們：IG @longbei_poker | LINE @longbei_poker
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // 配置設定
+        const CONFIG = {
+            // 數據來源URL - 你需要替換成你的GitHub倉庫的raw URL
+            dataUrl: './data/ranking.json',
+            // 數據重新載入間隔（毫秒）
+            refreshInterval: 300000, // 5分鐘
+            // 活動結束日期
+            eventEndDate: new Date('2025-06-29T23:59:59')
+        };
+
+        // 俱樂部配置
+        const clubConfigs = {
+            '花順龍北🌸': { class: 'flower' },
+            '寶島龍北🇹🇼': { class: 'taiwan' },
+            '黑海龍北♠️': { class: 'black' }
+        };
+
+        let rankingData = null;
+        let refreshTimer = null;
+
+        // 頁面載入時初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            loadRankingData();
+            calculateDaysLeft();
+            startAutoRefresh();
+        });
+
+        // 載入排名數據
+        async function loadRankingData() {
+            try {
+                document.getElementById('loadingSection').style.display = 'block';
+                document.getElementById('rankingContainer').style.display = 'none';
+                
+                const response = await fetch(CONFIG.dataUrl + '?t=' + Date.now());
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                rankingData = await response.json();
+                
+                // 驗證數據格式
+                if (!rankingData.players || !Array.isArray(rankingData.players)) {
+                    throw new Error('數據格式錯誤：缺少players陣列');
+                }
+                
+                generateRanking(rankingData.players);
+                updateStats(rankingData);
+                updateLastUpdateTime(rankingData.lastUpdate);
+                
+                document.getElementById('loadingSection').style.display = 'none';
+                document.getElementById('rankingContainer').style.display = 'block';
+                
+            } catch (error) {
+                console.error('載入數據失敗:', error);
+                showError(error.message);
+            }
+        }
+
+        // 顯示錯誤訊息
+        function showError(message) {
+            document.getElementById('loadingSection').innerHTML = `
+                <div class="error-message">
+                    ❌ 載入排名數據失敗：${message}<br>
+                    <br>
+                    請檢查：<br>
+                    • 網路連線是否正常<br>
+                    • 數據檔案是否存在<br>
+                    • 檔案格式是否正確<br>
+                    <br>
+                    <button onclick="loadRankingData()" style="padding: 10px 20px; background: #ff6b6b; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                        🔄 重新載入
+                    </button>
+                </div>
+            `;
+        }
+
+        // 生成排名列表
+        function generateRanking(players) {
+            const container = document.getElementById('rankingContainer');
+            container.innerHTML = '';
+            
+            players.slice(0, 50).forEach((player, index) => {
+                const rank = index + 1;
+                let rankIcon = '';
+                let rankClass = '';
+                
+                if (rank === 1) {
+                    rankIcon = '🥇';
+                    rankClass = 'gold top3';
+                } else if (rank === 2) {
+                    rankIcon = '🥈';
+                    rankClass = 'silver top3';
+                } else if (rank === 3) {
+                    rankIcon = '🥉';
+                    rankClass = 'bronze top3';
+                } else if (rank <= 6) {
+                    rankIcon = '🏆';
+                    rankClass = 'top10';
+                } else if (rank <= 10) {
+                    rankIcon = '⭐';
+                    rankClass = 'top10';
+                } else {
+                    rankIcon = '🎯';
+                }
+                
+                // 生成俱樂部標籤
+                const clubTags = player.clubs.map(clubName => {
+                    const clubConfig = clubConfigs[clubName];
+                    const clubClass = clubConfig ? clubConfig.class : 'flower';
+                    return `<span class="club-badge ${clubClass}">${clubName}</span>`;
+                }).join('');
+                
+                // 生成積分明細
+                const breakdownStr = Object.entries(player.breakdown || {})
+                    .filter(([mode, hands]) => hands > 0)
+                    .map(([mode, hands]) => `${mode}:${hands.toLocaleString()}`)
+                    .join(' | ');
+                
+                const rankingItem = document.createElement('div');
+                rankingItem.className = `ranking-item ${rankClass}`;
+                rankingItem.style.setProperty('--index', index);
+                rankingItem.innerHTML = `
+                    <div class="rank-badge ${rankClass.split(' ')[0]}">${rankIcon} ${rank.toString().padStart(2, '0')}</div>
+                    <div class="player-info">
+                        <div class="player-name">${player.name}</div>
+                        <div class="player-details">
+                            <span>📱 ID: ${player.id}</span>
+                            <div class="club-tags">${clubTags}</div>
+                            <span>🎮 總手牌: ${player.totalHands.toLocaleString()}</span>
+                        </div>
+                        ${breakdownStr ? `<div class="player-breakdown">📊 ${breakdownStr}</div>` : ''}
+                    </div>
+                    <div class="score-display">
+                        <div class="score-value">${parseFloat(player.score).toFixed(1)}</div>
+                        <div class="score-label">抽獎積分</div>
+                    </div>
+                `;
+                
+                container.appendChild(rankingItem);
+            });
+        }
+
+        // 更新統計數據
+        function updateStats(data) {
+            document.getElementById('totalPlayers').textContent = data.totalPlayers || data.players.length;
+            document.getElementById('maxScore').textContent = data.players.length > 0 ? 
+                parseFloat(data.players[0].score).toFixed(1) : '0';
+        }
+
+        // 更新最後更新時間
+        function updateLastUpdateTime(timestamp) {
+            if (timestamp) {
+                const date = new Date(timestamp);
+                document.getElementById('lastUpdate').textContent = 
+                    date.toLocaleString('zh-TW', { 
+                        year: 'numeric', 
+                        month: '2-digit', 
+                        day: '2-digit', 
+                        hour: '2-digit', 
+                        minute: '2-digit' 
+                    });
+            }
+        }
+
+        // 計算活動剩餘天數
+        function calculateDaysLeft() {
+            const now = new Date();
+            const diffTime = CONFIG.eventEndDate - now;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            document.getElementById('daysLeft').textContent = diffDays > 0 ? diffDays : '已結束';
+        }
+
+        // 開始自動重新整理
+        function startAutoRefresh() {
+            if (refreshTimer) {
+                clearInterval(refreshTimer);
+            }
+            
+            refreshTimer = setInterval(() => {
+                loadRankingData();
+            }, CONFIG.refreshInterval);
+        }
+
+        // 停止自動重新整理（當頁面不可見時）
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                    refreshTimer = null;
+                }
+            } else {
+                startAutoRefresh();
+                loadRankingData();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+# .github/workflows/manual-update.yml
+# 手動更新工作流程（適用於緊急更新）
+
+name: 手動更新排名
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: '強制更新（即使沒有檔案變更）'
+        required: false
+        default: false
+        type: boolean
+      message:
+        description: '更新訊息'
+        required: false
+        default: '手動更新排名數據'
+
+jobs:
+  manual-update:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 檢出倉庫
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: 設置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: 安裝依賴
+        run: npm install xlsx
+      
+      - name: 處理數據
+        run: node scripts/process-data.js excel_files data/ranking.json
+      
+      - name: 提交變更
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/ranking.json
+          git commit -m "🎯 ${{ github.event.inputs.message }} - $(date +'%Y-%m-%d %H:%M:%S')" || echo "無變更需要提交"
+          git push || echo "無變更需要推送"
+      
+      - name: 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages

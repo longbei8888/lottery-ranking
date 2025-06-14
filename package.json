@@ -1,0 +1,20 @@
+{
+  "name": "lottery-ranking",
+  "version": "1.0.0",
+  "description": "龍北俱樂部抽獎排名系統",
+  "main": "index.html",
+  "scripts": {
+    "process": "node scripts/process-data.js excel_files data/ranking.json",
+    "dev": "npx http-server . -p 8080",
+    "test": "node scripts/process-data.js excel_files data/ranking.json"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "keywords": ["poker", "ranking", "lottery"],
+  "author": "Longbei Club",
+  "license": "MIT"
+}
