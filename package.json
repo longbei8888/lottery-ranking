@@ -7,10 +7,13 @@
     "process": "node scripts/process-data.js excel_files data/ranking.json",
     "process-accumulative": "node scripts/process-data.js excel_files data/ranking.json true",
     "process-reset": "node scripts/process-data.js excel_files data/ranking.json false",
+    "process-participants": "node scripts/process-participants.js excel_files/participants.csv data/participants.json",
     "weekly-update": "npm run process-accumulative",
     "first-time": "npm run process-reset",
     "dev": "npx http-server . -p 8080",
-    "test": "npm run process-accumulative"
+    "test": "npm run process-accumulative",
+    "update-participants": "npm run process-participants && git add data/participants.json && git commit -m \"📋 更新參與者名單\" && git push",
+    "update-all": "npm run weekly-update && npm run process-participants"
   },
   "dependencies": {
     "xlsx": "^0.18.5"

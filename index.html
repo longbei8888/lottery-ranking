@@ -10,6 +10,18 @@
     <meta property="og:type" content="website">
     
     <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent-gradient: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            --success-gradient: linear-gradient(45deg, #28a745, #20c997);
+            --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.18);
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -17,25 +29,49 @@
         }
         
         body {
-            font-family: 'Microsoft JhengHei', '微軟正黑體', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Microsoft JhengHei', '微軟正黑體', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: var(--primary-gradient);
             min-height: 100vh;
             padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* 背景粒子效果 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.2) 0%, transparent 50%);
+            z-index: -1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
         }
         
         .container {
             max-width: 1400px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .header {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            background: var(--accent-gradient);
             color: white;
-            padding: 30px;
+            padding: 40px 30px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -49,7 +85,7 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
-            animation: twinkle 3s infinite;
+            animation: twinkle 4s ease-in-out infinite;
         }
         
         @keyframes twinkle {
@@ -58,23 +94,26 @@
         }
         
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: clamp(1.8em, 4vw, 2.8em);
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             position: relative;
             z-index: 1;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
         
         .header .subtitle {
-            font-size: 1.2em;
-            opacity: 0.9;
+            font-size: clamp(1em, 2.5vw, 1.3em);
+            opacity: 0.95;
             position: relative;
             z-index: 1;
+            font-weight: 500;
         }
         
         .stats-bar {
-            background: #f8f9fa;
-            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
@@ -83,81 +122,107 @@
         
         .stat-item {
             text-align: center;
-            padding: 15px;
+            padding: 20px 15px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-gradient);
+            transition: var(--transition);
         }
         
         .stat-item:hover {
             transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .stat-item:hover::before {
+            left: 0;
         }
         
         .stat-value {
-            font-size: 2em;
-            font-weight: bold;
-            color: #ff6b6b;
+            font-size: 2.2em;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
         }
         
         .stat-label {
             color: #666;
-            margin-top: 5px;
+            font-weight: 600;
+            font-size: 0.95em;
         }
         
-        .controls {
-            background: #f8f9fa;
-            padding: 15px 30px;
+        .activity-tabs {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 0;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #e9ecef;
+            border-bottom: 3px solid #e9ecef;
+            position: relative;
+        }
+
+        .tab-indicator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background: var(--accent-gradient);
+            transition: var(--transition);
+            border-radius: 2px 2px 0 0;
+        }
+
+        .tab-indicator.tab2 {
+            left: 50%;
         }
         
-        .refresh-btn {
-            background: linear-gradient(45deg, #28a745, #20c997);
-            color: white;
+        .tab-btn {
+            flex: 1;
+            padding: 25px 20px;
+            background: transparent;
             border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: bold;
+            font-size: 1.1em;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(40, 167, 69, 0.3);
-        }
-        
-        .refresh-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
-        }
-        
-        .last-update {
+            transition: var(--transition);
             color: #666;
-            font-size: 0.9em;
+            position: relative;
+            z-index: 1;
         }
         
-        .ranking-container {
-            padding: 30px;
+        .tab-btn.active {
+            color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.05);
         }
         
-        .ranking-item {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            margin-bottom: 15px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border-left: 5px solid #ddd;
-            opacity: 0;
-            animation: fadeInUp 0.5s ease forwards;
+        .tab-btn:hover {
+            color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.05);
         }
         
-        .ranking-item:nth-child(n) {
-            animation-delay: calc(var(--index) * 0.05s);
+        .activity-content {
+            display: none;
+            animation: fadeInUp 0.5s ease-out;
         }
         
+        .activity-content.active {
+            display: block;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -169,14 +234,234 @@
             }
         }
         
+        .activity1-container {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .activity1-title {
+            font-size: 2.2em;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+        
+        .activity1-description {
+            background: linear-gradient(135deg, #fff9e6, #fff);
+            padding: 35px;
+            border-radius: var(--border-radius);
+            margin-bottom: 35px;
+            border: 2px solid #ffd700;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .activity1-description::before {
+            content: '🎁';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .activity1-description h3 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+
+        .activity1-description p {
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        
+        .participants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 35px;
+        }
+        
+        .participant-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid #ff6b6b;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .participant-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .participant-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .participant-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        .participant-name {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .participant-info {
+            font-size: 0.95em;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .controls {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .refresh-btn {
+            background: var(--success-gradient);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        .refresh-btn:active {
+            transform: translateY(0);
+        }
+        
+        .last-update {
+            color: #666;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+        
+        .ranking-container {
+            padding: 30px;
+        }
+        
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            margin-bottom: 15px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-left: 5px solid #ddd;
+            opacity: 0;
+            animation: slideInRight 0.6s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ranking-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: var(--transition);
+        }
+        
+        .ranking-item:nth-child(n) {
+            animation-delay: calc(var(--index) * 0.05s);
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
         .ranking-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            transform: translateX(8px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .ranking-item:hover::before {
+            left: 100%;
         }
         
         .ranking-item.top3 {
             background: linear-gradient(135deg, #fff9e6, #fff);
             border-left-color: #ffd700;
+            position: relative;
+        }
+
+        .ranking-item.top3::after {
+            content: '👑';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.2em;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+            50% { transform: scale(1.1) rotate(180deg); opacity: 1; }
         }
         
         .ranking-item.top10 {
@@ -185,35 +470,52 @@
         }
         
         .rank-badge {
-            font-size: 1.5em;
-            font-weight: bold;
-            min-width: 60px;
+            font-size: 1.6em;
+            font-weight: 800;
+            min-width: 70px;
             text-align: center;
-            margin-right: 20px;
+            margin-right: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
         }
         
-        .rank-badge.gold { color: #ffd700; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
-        .rank-badge.silver { color: #c0c0c0; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
-        .rank-badge.bronze { color: #cd7f32; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
+        .rank-badge.gold { 
+            color: #ffd700; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+        }
+        .rank-badge.silver { 
+            color: #c0c0c0; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            filter: drop-shadow(0 0 8px rgba(192, 192, 192, 0.6));
+        }
+        .rank-badge.bronze { 
+            color: #cd7f32; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            filter: drop-shadow(0 0 8px rgba(205, 127, 50, 0.6));
+        }
         
         .player-info {
             flex: 1;
         }
         
         .player-name {
-            font-size: 1.3em;
-            font-weight: bold;
+            font-size: 1.4em;
+            font-weight: 700;
             color: #333;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
         
         .player-details {
             color: #666;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
             align-items: center;
+            font-size: 0.95em;
         }
         
         .club-tags {
@@ -223,54 +525,121 @@
         }
         
         .club-badge {
-            padding: 4px 8px;
-            border-radius: 12px;
+            padding: 6px 12px;
+            border-radius: 15px;
             font-size: 0.8em;
-            font-weight: bold;
+            font-weight: 700;
             color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .club-badge:hover {
+            transform: scale(1.05);
         }
         
-        .club-badge.flower { background: linear-gradient(45deg, #ff9a9e, #fecfef); }
-        .club-badge.taiwan { background: linear-gradient(45deg, #a8edea, #fed6e3); }
-        .club-badge.black { background: linear-gradient(45deg, #667eea, #764ba2); }
+        .club-badge.flower { 
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+            box-shadow: 0 4px 15px rgba(255, 154, 158, 0.4);
+        }
+        .club-badge.taiwan { 
+            background: linear-gradient(45deg, #a8edea, #fed6e3);
+            box-shadow: 0 4px 15px rgba(168, 237, 234, 0.4);
+        }
+        .club-badge.black { 
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
         
         .player-breakdown {
             font-size: 0.9em;
             color: #888;
-            background: #f8f9fa;
-            padding: 8px 12px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 10px 15px;
             border-radius: 20px;
             display: inline-block;
-            margin-top: 5px;
+            margin-top: 8px;
+            border: 1px solid #e9ecef;
+            transition: var(--transition);
+        }
+
+        .player-breakdown:hover {
+            background: linear-gradient(135deg, #e9ecef, #dee2e6);
         }
         
         .score-display {
             text-align: center;
-            min-width: 120px;
+            min-width: 130px;
+            position: relative;
         }
         
         .score-value {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #ff6b6b;
+            font-size: 2em;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
         }
         
         .score-label {
             font-size: 0.9em;
             color: #666;
+            font-weight: 600;
         }
         
         .info-panel {
-            background: #f8f9fa;
-            padding: 25px;
-            margin-top: 30px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            margin-top: 35px;
+            border-radius: var(--border-radius);
             border: 2px solid #e9ecef;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        .info-panel h3 {
+            color: #ff6b6b;
+            margin-bottom: 25px;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+
+        .info-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white; 
+            padding: 20px; 
+            border-radius: var(--border-radius); 
+            border-left: 4px solid #ff6b6b;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .info-card h4 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        .info-card p {
+            line-height: 1.6;
+            color: #555;
         }
         
         .loading {
             text-align: center;
-            padding: 40px;
+            padding: 60px 20px;
             color: #666;
         }
         
@@ -278,8 +647,8 @@
             border: 4px solid #f3f3f3;
             border-top: 4px solid #ff6b6b;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             animation: spin 1s linear infinite;
             margin: 20px auto;
         }
@@ -290,30 +659,51 @@
         }
         
         .error-message {
-            background: #f8d7da;
+            background: linear-gradient(135deg, #f8d7da, #f1aeb5);
             color: #721c24;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 25px;
+            border-radius: var(--border-radius);
             margin: 20px;
             border: 1px solid #f5c6cb;
+            box-shadow: var(--card-shadow);
         }
         
         .footer {
-            background: #343a40;
+            background: linear-gradient(135deg, #343a40, #495057);
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
         }
-        
+
+        .footer p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* 響應式設計優化 */
         @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .stats-bar {
+                padding: 20px;
+                gap: 15px;
+            }
+
             .ranking-item {
                 flex-direction: column;
                 text-align: center;
+                padding: 20px;
             }
             
             .rank-badge {
                 margin-right: 0;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
             
             .player-details {
@@ -322,86 +712,226 @@
             
             .controls {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
+                text-align: center;
             }
+
+            .activity1-container {
+                padding: 30px 20px;
+            }
+
+            .participants-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-btn {
+                padding: 20px 15px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .score-display {
+                min-width: 100px;
+            }
+
+            .score-value {
+                font-size: 1.6em;
+            }
+
+            .player-name {
+                font-size: 1.2em;
+            }
+
+            .rank-badge {
+                font-size: 1.4em;
+                min-width: 60px;
+            }
+        }
+
+        /* 深色模式（可選） */
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background: rgba(30, 30, 30, 0.95);
+                color: #e0e0e0;
+            }
+
+            .ranking-item,
+            .participant-card,
+            .stat-item,
+            .info-card {
+                background: rgba(40, 40, 40, 0.8);
+                color: #e0e0e0;
+            }
+
+            .player-name,
+            .participant-name {
+                color: #f0f0f0;
+            }
+        }
+
+        /* 自定義滾動條 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gradient);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #e55a5a, #d44545);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🐉 龍北俱樂部【回饋活動】抽獎排名榜 🔥</h1>
+            <h1>🐉 龍北俱樂部【回饋活動】完整參與名單 🔥</h1>
             <div class="subtitle">📅 活動期間：2025/06/02 ～ 2025/06/29 | 🎁 總獎金價值突破十萬元！</div>
         </div>
         
-        <div class="controls">
-            <div class="last-update">
-                📊 最後更新時間：<span id="lastUpdate">載入中...</span>
-            </div>
-            <button class="refresh-btn" onclick="loadRankingData()">
-                🔄 重新整理排名
+        <div class="activity-tabs">
+            <div class="tab-indicator" id="tabIndicator"></div>
+            <button class="tab-btn active" onclick="showActivity('activity1')">
+                📢 活動一：社群分享抽大獎
+            </button>
+            <button class="tab-btn" onclick="showActivity('activity2')">
+                🏆 活動二：頂級 Reg 手排王爭霸賽
             </button>
         </div>
         
-        <div class="stats-bar">
-            <div class="stat-item">
-                <div class="stat-value" id="totalPlayers">-</div>
-                <div class="stat-label">📈 總參與玩家數</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="maxScore">-</div>
-                <div class="stat-label">🏆 最高積分</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">18</div>
-                <div class="stat-label">🎁 抽獎獎品總數</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="daysLeft">-</div>
-                <div class="stat-label">⏰ 活動剩餘天數</div>
-            </div>
-        </div>
-        
-        <div id="loadingSection" class="loading">
-            <div class="spinner"></div>
-            <div>正在載入最新排名數據...</div>
-        </div>
-        
-        <div class="ranking-container" id="rankingContainer" style="display: none;">
-            <!-- 排名會動態載入在這裡 -->
-        </div>
-        
-        <div class="info-panel">
-            <div style="text-align: center; margin-bottom: 20px;">
-                <h3>🎁 獎品資訊與活動規則</h3>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #ff6b6b;">
-                    <h4>🏆 主要獎品</h4>
-                    <p>🥇 iPhone 16 Pro 128GB ($36,900)<br>
-                    🥈 Apple Watch S10 GPS 42mm ($13,500)<br>
-                    🥉 AirPods 4 降噪版 ($5,990)</p>
-                </div>
-                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #ff6b6b;">
-                    <h4>🎲 積分計算</h4>
-                    <p>有效手排 × 模式倍率 = 抽獎積分<br>
-                    ⚡ NLH: ×1.0<br>
-                    ⚡ PLO: ×1.0<br>
-                    ⚡ 十三支/MAU BINH: ×0.6<br>
-                    ⚡ OFC: ×0.7<br>
-                    ⚡ AoF: ×0.3<br>
-                    ❌ SNG/MTT 不參與計分</p>
-                </div>
-                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #ff6b6b;">
-                    <h4>🏆 補償獎勵</h4>
-                    <p>積分排名前3名但未中獎者，可獲得3,000遊戲幣補償獎勵</p>
-                </div>
-                <div style="background: white; padding: 15px; border-radius: 10px; border-left: 4px solid #ff6b6b;">
-                    <h4>📢 抽獎資訊</h4>
+        <!-- 活動一：社群分享抽獎 -->
+        <div id="activity1" class="activity-content active">
+            <div class="activity1-container">
+                <div class="activity1-title">📢 活動一：社群分享抽大獎</div>
+                
+                <div class="activity1-description">
+                    <h3>🎯 參與方式</h3>
+                    <p>1️⃣ 分享官方活動貼文至 IG／Threads 並按讚<br>
+                    2️⃣ 留言互動+關注官方社群，上傳至官方 LINE @longbei_poker<br>
+                    3️⃣ 完成以上即可登記抽獎</p>
+                    
+                    <h3>🏆 獎品內容（共 14 名得主）</h3>
+                    <p>🏆 頭獎：Apple iPad 11 2025 WiFi（市價 $11,490）× 1 名<br>
+                    🥈 二獎：AirPods Pro 2（市價 $7,490）× 1 名<br>
+                    🥉 三獎：2000 遊戲幣 × 3 名<br>
+                    🎁 四獎：1000 遊戲幣 × 4 名<br>
+                    🎁 五獎：500 遊戲幣 × 5 名</p>
+                    
+                    <h3>📢 抽獎資訊</h3>
                     <p>🗓️ 抽獎日期: 2025/07/05<br>
                     📺 直播平台: IG @longbei_poker<br>
-                    🎯 抽獎方式: 依積分權重抽出<br>
-                    📋 每人限得一獎</p>
+                    📋 分享越多，中獎越有感！</p>
+                </div>
+                
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalParticipants">-</div>
+                        <div class="stat-label">👥 總參與人數</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">14</div>
+                        <div class="stat-label">🎁 獎品總數</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">07/05</div>
+                        <div class="stat-label">🎊 抽獎日期</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="participantUpdate">-</div>
+                        <div class="stat-label">📅 名單更新</div>
+                    </div>
+                </div>
+                
+                <div class="participants-grid" id="participantsContainer">
+                    <!-- 參與者名單會動態載入在這裡 -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- 活動二：手排王爭霸賽 -->
+        <div id="activity2" class="activity-content">
+            <div class="controls">
+                <div class="last-update">
+                    📊 最後更新時間：<span id="lastUpdate">載入中...</span>
+                </div>
+                <button class="refresh-btn" onclick="loadRankingData()">
+                    🔄 重新整理排名
+                </button>
+            </div>
+            
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-value" id="totalPlayers">-</div>
+                    <div class="stat-label">📈 總參與玩家數</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="maxScore">-</div>
+                    <div class="stat-label">🏆 最高積分</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">18</div>
+                    <div class="stat-label">🎁 抽獎獎品總數</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="daysLeft">-</div>
+                    <div class="stat-label">⏰ 活動剩餘天數</div>
+                </div>
+            </div>
+            
+            <div id="loadingSection" class="loading">
+                <div class="spinner"></div>
+                <div>正在載入最新排名數據...</div>
+            </div>
+            
+            <div class="ranking-container" id="rankingContainer" style="display: none;">
+                <!-- 排名會動態載入在這裡 -->
+            </div>
+            
+            <div class="info-panel">
+                <div style="text-align: center;">
+                    <h3>🎁 活動二獎品資訊與規則</h3>
+                </div>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4>🏆 主要獎品</h4>
+                        <p>🥇 iPhone 16 Pro 128GB ($36,900)<br>
+                        🥈 Apple Watch S10 GPS 42mm ($13,500)<br>
+                        🥉 AirPods 4 降噪版 ($5,990)</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🎲 積分計算</h4>
+                        <p>有效手排 × 模式倍率 = 抽獎積分<br>
+                        ⚡ NLH: ×1.0<br>
+                        ⚡ PLO: ×1.0<br>
+                        ⚡ 十三支/MAU BINH: ×0.6<br>
+                        ⚡ OFC: ×0.7<br>
+                        ⚡ AoF: ×0.3<br>
+                        ❌ SNG/MTT 不參與計分</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🏆 補償獎勵</h4>
+                        <p>積分排名前3名但未中獎者，可獲得3,000遊戲幣補償獎勵</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>📢 抽獎資訊</h4>
+                        <p>🗓️ 抽獎日期: 2025/07/05<br>
+                        📺 直播平台: IG @longbei_poker<br>
+                        🎯 抽獎方式: 依積分權重抽出<br>
+                        📋 每人限得一獎</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -429,15 +959,128 @@
         const clubConfigs = {
             '花順龍北🌸': { class: 'flower' },
             '寶島龍北🇹🇼': { class: 'taiwan' },
-            '黑海龍北♠️': { class: 'black' }
+            '黑海龍北🇷🇺': { class: 'black' }
         };
 
         let rankingData = null;
         let refreshTimer = null;
 
-        // 頁面載入時初始化
+        // 頁籤切換功能
+        function showActivity(activityId) {
+            // 隱藏所有活動內容
+            document.querySelectorAll('.activity-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // 移除所有頁籤的active狀態
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 顯示選中的活動
+            document.getElementById(activityId).classList.add('active');
+            
+            // 設置對應頁籤為active
+            event.target.classList.add('active');
+            
+            // 更新指示器位置
+            const indicator = document.getElementById('tabIndicator');
+            if (activityId === 'activity2') {
+                indicator.classList.add('tab2');
+            } else {
+                indicator.classList.remove('tab2');
+            }
+            
+            // 如果切換到活動二，載入排名數據
+            if (activityId === 'activity2') {
+                loadRankingData();
+            } else if (activityId === 'activity1') {
+                loadParticipants();
+            }
+        }
+
+        // 載入活動一參與者名單
+        async function loadParticipants() {
+            try {
+                const response = await fetch('./data/participants.json?t=' + Date.now());
+                if (response.ok) {
+                    const data = await response.json();
+                    displayParticipants(data.participants || []);
+                    updateParticipantsStats(data);
+                } else {
+                    // 如果沒有參與者數據，顯示空狀態
+                    displayEmptyParticipants();
+                }
+            } catch (error) {
+                console.error('載入參與者名單失敗:', error);
+                displayEmptyParticipants();
+            }
+        }
+
+        // 顯示參與者名單
+        function displayParticipants(participants) {
+            const container = document.getElementById('participantsContainer');
+            
+            if (participants.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666;">
+                        📝 尚未有參與者名單<br>
+                        請聯繫管理員更新名單
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = '';
+            
+            participants.forEach((participant, index) => {
+                const card = document.createElement('div');
+                card.className = 'participant-card';
+                card.style.setProperty('--index', index);
+                card.style.animationDelay = `${index * 0.1}s`;
+                
+                // 顯示參與的平台
+                const platforms = [];
+                if (participant.instagram) platforms.push('📷 IG');
+                if (participant.threads) platforms.push('🧵 Threads');
+                const platformText = platforms.length > 0 ? platforms.join(' + ') : '📱 社群';
+                
+                card.innerHTML = `
+                    <div class="participant-name">@${participant.username || '參與者' + (index + 1)}</div>
+                    <div class="participant-info">
+                        ${platformText || ''}
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // 顯示空狀態
+        function displayEmptyParticipants() {
+            document.getElementById('participantsContainer').innerHTML = `
+                <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666;">
+                    📝 尚未載入參與者名單<br>
+                    <small>請確認 data/participants.json 檔案存在</small>
+                </div>
+            `;
+            document.getElementById('totalParticipants').textContent = '0';
+        }
+
+        // 更新參與者統計
+        function updateParticipantsStats(data) {
+            document.getElementById('totalParticipants').textContent = data.totalParticipants || data.participants.length;
+            if (data.lastUpdate) {
+                const date = new Date(data.lastUpdate);
+                document.getElementById('participantUpdate').textContent = 
+                    date.toLocaleDateString('zh-TW').slice(5); // MM/DD
+            }
+        }
+
+        // 初始化
         document.addEventListener('DOMContentLoaded', function() {
-            loadRankingData();
+            // 初始化時載入活動一的資料（因為預設顯示活動一）
+            loadParticipants();
             calculateDaysLeft();
             startAutoRefresh();
         });
@@ -485,7 +1128,7 @@
                     • 數據檔案是否存在<br>
                     • 檔案格式是否正確<br>
                     <br>
-                    <button onclick="loadRankingData()" style="padding: 10px 20px; background: #ff6b6b; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    <button onclick="loadRankingData()" style="padding: 12px 24px; background: var(--accent-gradient); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
                         🔄 重新載入
                     </button>
                 </div>
@@ -538,7 +1181,7 @@
                 rankingItem.className = `ranking-item ${rankClass}`;
                 rankingItem.style.setProperty('--index', index);
                 rankingItem.innerHTML = `
-                    <div class="rank-badge ${rankClass.split(' ')[0]}">${rankIcon} ${rank.toString().padStart(2, '0')}</div>
+                    <div class="rank-badge ${rankClass.split(' ')[0]}">${rankIcon}<span style="margin-left: 5px;">${rank.toString().padStart(2, '0')}</span></div>
                     <div class="player-info">
                         <div class="player-name">${player.name}</div>
                         <div class="player-details">
@@ -595,7 +1238,10 @@
             }
             
             refreshTimer = setInterval(() => {
-                loadRankingData();
+                // 只有在活動二頁面時才自動重新整理
+                if (document.getElementById('activity2').classList.contains('active')) {
+                    loadRankingData();
+                }
             }, CONFIG.refreshInterval);
         }
 
@@ -608,7 +1254,12 @@
                 }
             } else {
                 startAutoRefresh();
-                loadRankingData();
+                // 重新載入當前活動的數據
+                if (document.getElementById('activity2').classList.contains('active')) {
+                    loadRankingData();
+                } else {
+                    loadParticipants();
+                }
             }
         });
     </script>

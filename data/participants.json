@@ -1,0 +1,174 @@
+{
+  "lastUpdate": "2025-06-15T21:53:36.318Z",
+  "lastUpdateLocal": "2025/06/16 上午05:53",
+  "totalParticipants": 14,
+  "platformStats": {
+    "instagram": 8,
+    "threads": 7,
+    "both": 1,
+    "total": 14
+  },
+  "prizeInfo": {
+    "totalPrizes": 14,
+    "prizeList": [
+      {
+        "name": "Apple iPad 11 2025 WiFi",
+        "value": 11490,
+        "quantity": 1
+      },
+      {
+        "name": "AirPods Pro 2",
+        "value": 7490,
+        "quantity": 1
+      },
+      {
+        "name": "2000 遊戲幣",
+        "value": 2000,
+        "quantity": 3
+      },
+      {
+        "name": "1000 遊戲幣",
+        "value": 1000,
+        "quantity": 4
+      },
+      {
+        "name": "500 遊戲幣",
+        "value": 500,
+        "quantity": 5
+      }
+    ]
+  },
+  "drawInfo": {
+    "drawDate": "2025-07-05",
+    "drawPlatform": "IG @longbei_poker",
+    "drawType": "live_stream"
+  },
+  "participants": [
+    {
+      "id": 1,
+      "username": "billian__0105",
+      "name": "billian__0105",
+      "instagram": true,
+      "threads": false,
+      "submitTime": "2025-06-15T21:53:36.314Z",
+      "status": "registered"
+    },
+    {
+      "id": 2,
+      "username": "ri4627gh",
+      "name": "ri4627gh",
+      "instagram": false,
+      "threads": true,
+      "submitTime": "2025-06-15T21:53:36.314Z",
+      "status": "registered"
+    },
+    {
+      "id": 3,
+      "username": "longbei_queen",
+      "name": "longbei_queen",
+      "instagram": false,
+      "threads": true,
+      "submitTime": "2025-06-15T21:53:36.314Z",
+      "status": "registered"
+    },
+    {
+      "id": 4,
+      "username": "kayden_916",
+      "name": "kayden_916",
+      "instagram": false,
+      "threads": true,
+      "submitTime": "2025-06-15T21:53:36.315Z",
+      "status": "registered"
+    },
+    {
+      "id": 5,
+      "username": "g58ty1",
+      "name": "g58ty1",
+      "instagram": true,
+      "threads": false,
+      "submitTime": "2025-06-15T21:53:36.315Z",
+      "status": "registered"
+    },
+    {
+      "id": 6,
+      "username": "l_jy_u_",
+      "name": "l_jy_u_",
+      "instagram": false,
+      "threads": true,
+      "submitTime": "2025-06-15T21:53:36.315Z",
+      "status": "registered"
+    },
+    {
+      "id": 7,
+      "username": "yupoker.0",
+      "name": "yupoker.0",
+      "instagram": false,
+      "threads": true,
+      "submitTime": "2025-06-15T21:53:36.316Z",
+      "status": "registered"
+    },
+    {
+      "id": 8,
+      "username": "_gvpoker_",
+      "name": "_gvpoker_",
+      "instagram": true,
+      "threads": false,
+      "submitTime": "2025-06-15T21:53:36.316Z",
+      "status": "registered"
+    },
+    {
+      "id": 9,
+      "username": "li.zhexin",
+      "name": "li.zhexin",
+      "instagram": true,
+      "threads": false,
+      "submitTime": "2025-06-15T21:53:36.316Z",
+      "status": "registered"
+    },
+    {
+      "id": 10,
+      "username": "iso_lin10lisa",
+      "name": "iso_lin10lisa",
+      "instagram": true,
+      "threads": true,
+      "submitTime": "2025-06-15T21:53:36.317Z",
+      "status": "registered"
+    },
+    {
+      "id": 11,
+      "username": "veggieshsin11.28_ed",
+      "name": "veggieshsin11.28_ed",
+      "instagram": true,
+      "threads": false,
+      "submitTime": "2025-06-15T21:53:36.317Z",
+      "status": "registered"
+    },
+    {
+      "id": 12,
+      "username": "lyxlll5l6",
+      "name": "lyxlll5l6",
+      "instagram": true,
+      "threads": false,
+      "submitTime": "2025-06-15T21:53:36.317Z",
+      "status": "registered"
+    },
+    {
+      "id": 13,
+      "username": "ggininder62",
+      "name": "ggininder62",
+      "instagram": false,
+      "threads": true,
+      "submitTime": "2025-06-15T21:53:36.318Z",
+      "status": "registered"
+    },
+    {
+      "id": 14,
+      "username": "kevin901221",
+      "name": "kevin901221",
+      "instagram": true,
+      "threads": false,
+      "submitTime": "2025-06-15T21:53:36.318Z",
+      "status": "registered"
+    }
+  ]
+}

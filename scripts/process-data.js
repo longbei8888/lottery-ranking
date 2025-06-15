@@ -36,7 +36,7 @@ const clubConfigs = {
         filePattern: /taiwan|寶島|formosa/i
     },
     'black': {
-        name: '黑海龍北♠️',
+        name: '黑海龍北🇷🇺',
         identifier: '黑海龍北',
         filePattern: /black|黑海|black.*sea/i
     }
