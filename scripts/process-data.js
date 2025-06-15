@@ -388,14 +388,107 @@ function processExcelFile(filePath, allPlayers) {
 }
 
 /**
- * 主要處理函數
+ * 載入歷史數據（如果存在）
  */
-function processAllData(inputDir, outputPath) {
+function loadHistoricalData(outputPath) {
+    if (fs.existsSync(outputPath)) {
+        try {
+            const data = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
+            if (data.players && Array.isArray(data.players)) {
+                console.log(`載入歷史數據: ${data.players.length} 位玩家`);
+                
+                // 轉換為 Map 格式便於處理
+                const historicalPlayers = new Map();
+                data.players.forEach(player => {
+                    historicalPlayers.set(player.id, {
+                        name: player.name,
+                        id: player.id,
+                        clubs: player.clubs || [],
+                        totalHands: player.totalHands || 0,
+                        breakdown: player.breakdown || {},
+                        score: player.score || 0,
+                        lastUpdate: data.lastUpdate || null
+                    });
+                });
+                
+                return historicalPlayers;
+            }
+        } catch (error) {
+            console.log('載入歷史數據失敗，將從零開始:', error.message);
+        }
+    }
+    
+    console.log('未找到歷史數據，將創建新的排名');
+    return new Map();
+}
+
+/**
+ * 合併新數據到歷史數據中（累加模式）
+ */
+function mergeWithHistoricalData(newPlayers, historicalPlayers) {
+    console.log('\n=== 開始累加數據 ===');
+    let updatedCount = 0;
+    let newPlayerCount = 0;
+    
+    for (const [playerId, newPlayerData] of newPlayers.entries()) {
+        if (historicalPlayers.has(playerId)) {
+            // 現有玩家 - 累加數據
+            const existingPlayer = historicalPlayers.get(playerId);
+            
+            console.log(`累加玩家數據: ${newPlayerData.name} (ID: ${playerId})`);
+            console.log(`  舊數據 - 手牌: ${existingPlayer.totalHands}, 積分: ${existingPlayer.score.toFixed(1)}`);
+            console.log(`  新數據 - 手牌: ${newPlayerData.totalHands}, 積分: ${newPlayerData.score.toFixed(1)}`);
+            
+            // 更新玩家名稱（以最新為準）
+            existingPlayer.name = newPlayerData.name;
+            
+            // 合併俱樂部列表
+            newPlayerData.clubs.forEach(club => {
+                if (!existingPlayer.clubs.includes(club)) {
+                    existingPlayer.clubs.push(club);
+                }
+            });
+            
+            // 累加手牌數
+            existingPlayer.totalHands += newPlayerData.totalHands;
+            
+            // 累加各模式的手牌數
+            for (const [mode, hands] of Object.entries(newPlayerData.breakdown)) {
+                existingPlayer.breakdown[mode] = (existingPlayer.breakdown[mode] || 0) + hands;
+            }
+            
+            // 累加積分
+            existingPlayer.score += newPlayerData.score;
+            
+            console.log(`  累加後 - 手牌: ${existingPlayer.totalHands}, 積分: ${existingPlayer.score.toFixed(1)}`);
+            updatedCount++;
+            
+        } else {
+            // 新玩家 - 直接加入
+            console.log(`新玩家: ${newPlayerData.name} (ID: ${playerId})`);
+            historicalPlayers.set(playerId, newPlayerData);
+            newPlayerCount++;
+        }
+    }
+    
+    console.log(`\n累加完成: 更新 ${updatedCount} 位現有玩家, 新增 ${newPlayerCount} 位新玩家`);
+    return historicalPlayers;
+}
+/**
+ * 主要處理函數（支援累加模式）
+ */
+function processAllData(inputDir, outputPath, isAccumulative = true) {
     console.log('開始處理龍北俱樂部數據...');
     console.log(`輸入目錄: ${inputDir}`);
     console.log(`輸出路徑: ${outputPath}`);
+    console.log(`累加模式: ${isAccumulative ? '開啟' : '關閉'}`);
     
-    const allPlayers = new Map();
+    // 載入歷史數據（如果是累加模式）
+    let allPlayers = new Map();
+    if (isAccumulative) {
+        allPlayers = loadHistoricalData(outputPath);
+    }
+    
     let totalProcessed = 0;
     
     // 確保輸入目錄存在
@@ -404,28 +497,74 @@ function processAllData(inputDir, outputPath) {
         return null;
     }
     
-    // 獲取所有Excel檔案
-    const files = fs.readdirSync(inputDir).filter(file => 
+    // 獲取所有Excel檔案（包括子目錄）
+    let files = [];
+    
+    // 掃描根目錄的Excel檔案
+    const rootFiles = fs.readdirSync(inputDir).filter(file => 
         file.match(/\.(xlsx|xls)$/i)
     );
+    rootFiles.forEach(file => {
+        files.push({ path: path.join(inputDir, file), name: file });
+    });
+    
+    // 掃描 current 子目錄（如果存在）
+    const currentDir = path.join(inputDir, 'current');
+    if (fs.existsSync(currentDir)) {
+        const currentFiles = fs.readdirSync(currentDir).filter(file => 
+            file.match(/\.(xlsx|xls)$/i)
+        );
+        currentFiles.forEach(file => {
+            files.push({ path: path.join(currentDir, file), name: `current/${file}` });
+        });
+    }
+    
+    // 掃描其他可能的子目錄
+    const subdirs = ['week1_0609', 'week2_0616', 'week3_0623', 'latest', 'new'];
+    subdirs.forEach(subdir => {
+        const subdirPath = path.join(inputDir, subdir);
+        if (fs.existsSync(subdirPath)) {
+            const subdirFiles = fs.readdirSync(subdirPath).filter(file => 
+                file.match(/\.(xlsx|xls)$/i)
+            );
+            subdirFiles.forEach(file => {
+                files.push({ path: path.join(subdirPath, file), name: `${subdir}/${file}` });
+            });
+        }
+    });
     
     if (files.length === 0) {
-        console.error(`在 ${inputDir} 目錄中未找到Excel檔案`);
+        console.error(`在 ${inputDir} 目錄及其子目錄中未找到Excel檔案`);
+        console.log('請檢查以下位置：');
+        console.log(`- ${inputDir}/*.xlsx`);
+        console.log(`- ${inputDir}/current/*.xlsx`);
+        console.log('或將Excel檔案直接放在 excel_files/ 根目錄');
         return null;
     }
     
-    console.log(`找到 ${files.length} 個Excel檔案:`, files);
+    console.log(`找到 ${files.length} 個Excel檔案:`);
+    files.forEach(file => console.log(`  - ${file.name}`));
     
-    // 處理每個Excel檔案
-    for (const file of files) {
-        const filePath = path.join(inputDir, file);
-        const count = processExcelFile(filePath, allPlayers);
+    // 處理新的Excel檔案數據
+    const newPlayers = new Map();
+    
+    for (const fileInfo of files) {
+        const count = processExcelFile(fileInfo.path, newPlayers);
         totalProcessed += count;
     }
     
-    if (allPlayers.size === 0) {
-        console.error('未處理到任何玩家數據');
+    if (newPlayers.size === 0) {
+        console.error('未處理到任何新的玩家數據');
         return null;
+    }
+    
+    // 如果是累加模式，合併新舊數據
+    if (isAccumulative && allPlayers.size > 0) {
+        allPlayers = mergeWithHistoricalData(newPlayers, allPlayers);
+    } else {
+        // 非累加模式或沒有歷史數據，直接使用新數據
+        allPlayers = newPlayers;
+        console.log('使用新數據（非累加模式或無歷史數據）');
     }
     
     // 轉換為陣列並排序
@@ -436,6 +575,7 @@ function processAllData(inputDir, outputPath) {
     const stats = {
         totalPlayers: sortedPlayers.length,
         totalRecords: totalProcessed,
+        newRecords: newPlayers.size,
         maxScore: sortedPlayers.length > 0 ? sortedPlayers[0].score : 0,
         minScore: sortedPlayers.length > 0 ? sortedPlayers[sortedPlayers.length - 1].score : 0,
         avgScore: sortedPlayers.length > 0 ? 
@@ -453,8 +593,14 @@ function processAllData(inputDir, outputPath) {
             hour: '2-digit', 
             minute: '2-digit' 
         }),
+        isAccumulative: isAccumulative,
+        updateHistory: {
+            totalUpdates: (allPlayers.size > newPlayers.size) ? 'multiple' : 'first',
+            thisUpdateRecords: totalProcessed,
+            thisUpdatePlayers: newPlayers.size
+        },
         totalPlayers: stats.totalPlayers,
-        totalRecords: stats.totalRecords,
+        totalRecords: totalProcessed,
         stats: stats,
         eventInfo: {
             startDate: '2025-06-02',
@@ -481,9 +627,11 @@ function processAllData(inputDir, outputPath) {
     
     console.log('\n=== 處理完成 ===');
     console.log(`總玩家數: ${stats.totalPlayers}`);
-    console.log(`總處理記錄: ${stats.totalRecords}`);
+    console.log(`本次處理記錄: ${stats.totalRecords}`);
+    console.log(`本次新增/更新玩家: ${stats.newRecords}`);
     console.log(`最高積分: ${stats.maxScore.toFixed(1)}`);
     console.log(`平均積分: ${stats.avgScore.toFixed(1)}`);
+    console.log(`累加模式: ${isAccumulative ? '開啟' : '關閉'}`);
     console.log(`輸出檔案: ${outputPath}`);
     
     if (sortedPlayers.length > 0) {
@@ -511,9 +659,10 @@ if (require.main === module) {
     const args = process.argv.slice(2);
     const inputDir = args[0] || './excel_files';
     const outputPath = args[1] || './data/ranking.json';
+    const isAccumulative = args[2] !== 'false'; // 預設為累加，除非明確傳入 false
     
     try {
-        const result = processAllData(inputDir, outputPath);
+        const result = processAllData(inputDir, outputPath, isAccumulative);
         if (!result) {
             console.error('數據處理失敗');
             process.exit(1);

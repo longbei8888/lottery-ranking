@@ -5,8 +5,12 @@
   "main": "index.html",
   "scripts": {
     "process": "node scripts/process-data.js excel_files data/ranking.json",
+    "process-accumulative": "node scripts/process-data.js excel_files data/ranking.json true",
+    "process-reset": "node scripts/process-data.js excel_files data/ranking.json false",
+    "weekly-update": "npm run process-accumulative",
+    "first-time": "npm run process-reset",
     "dev": "npx http-server . -p 8080",
-    "test": "node scripts/process-data.js excel_files data/ranking.json"
+    "test": "npm run process-accumulative"
   },
   "dependencies": {
     "xlsx": "^0.18.5"
@@ -14,7 +18,7 @@
   "devDependencies": {
     "http-server": "^14.1.1"
   },
-  "keywords": ["poker", "ranking", "lottery"],
+  "keywords": ["poker", "ranking", "lottery", "累加", "accumulative"],
   "author": "Longbei Club",
   "license": "MIT"
 }

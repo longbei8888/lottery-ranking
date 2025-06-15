@@ -1,14 +1,21 @@
 {
-  "lastUpdate": "2025-06-14T03:26:53.307Z",
-  "lastUpdateLocal": "2025/06/14 上午11:26",
-  "totalPlayers": 194,
-  "totalRecords": 207,
+  "lastUpdate": "2025-06-15T20:52:10.485Z",
+  "lastUpdateLocal": "2025/06/16 上午04:52",
+  "isAccumulative": true,
+  "updateHistory": {
+    "totalUpdates": "multiple",
+    "thisUpdateRecords": 57,
+    "thisUpdatePlayers": 64
+  },
+  "totalPlayers": 223,
+  "totalRecords": 57,
   "stats": {
-    "totalPlayers": 194,
-    "totalRecords": 207,
+    "totalPlayers": 223,
+    "totalRecords": 57,
+    "newRecords": 64,
     "maxScore": 9214,
     "minScore": 0,
-    "avgScore": 615.1082474226804
+    "avgScore": 551.7426008968612
   },
   "eventInfo": {
     "startDate": "2025-06-02",
@@ -51,7 +58,8 @@
       "breakdown": {
         "NLH": 9214
       },
-      "score": 9214
+      "score": 9214,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "GIIIIG",
@@ -63,32 +71,37 @@
       "breakdown": {
         "NLH": 7878
       },
-      "score": 7878
+      "score": 7878,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "monster",
       "id": 3298239,
       "clubs": [
         "花順龍北🌸",
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 7167,
+      "totalHands": 7299,
       "breakdown": {
         "NLH": 7071
       },
-      "score": 7071
+      "score": 7071,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "牛屎蓋",
       "id": 2910781,
       "clubs": [
-        "花順龍北🌸"
+        "花順龍北🌸",
+        "寶島龍北🇹🇼"
       ],
       "totalHands": 6358,
       "breakdown": {
         "NLH": 6358
       },
-      "score": 6358
+      "score": 6358,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "XP3354811",
@@ -100,7 +113,8 @@
       "breakdown": {
         "NLH": 6174
       },
-      "score": 6174
+      "score": 6174,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "我川威武",
@@ -112,32 +126,51 @@
       "breakdown": {
         "NLH": 5939
       },
-      "score": 5939
+      "score": 5939,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "老阿嬤的呻吟",
       "id": 2928478,
       "clubs": [
-        "花順龍北🌸"
+        "花順龍北🌸",
+        "寶島龍北🇹🇼"
       ],
       "totalHands": 5466,
       "breakdown": {
         "NLH": 5444,
         "AoF": 22
       },
-      "score": 5450.6
+      "score": 5450.6,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "不想肚子餓",
+      "id": 3423537,
+      "clubs": [
+        "花順龍北🌸",
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 5151,
+      "breakdown": {
+        "NLH": 5128
+      },
+      "score": 5128,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "每天在做夢",
       "id": 3013725,
       "clubs": [
-        "花順龍北🌸"
+        "花順龍北🌸",
+        "寶島龍北🇹🇼"
       ],
       "totalHands": 4940,
       "breakdown": {
         "NLH": 4940
       },
-      "score": 4940
+      "score": 4940,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Iwwia.",
@@ -149,20 +182,8 @@
       "breakdown": {
         "NLH": 4493
       },
-      "score": 4493
-    },
-    {
-      "name": "不想肚子餓",
-      "id": 3423537,
-      "clubs": [
-        "花順龍北🌸",
-        "寶島龍北🇹🇼"
-      ],
-      "totalHands": 3690,
-      "breakdown": {
-        "NLH": 3690
-      },
-      "score": 3690
+      "score": 4493,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Ron0927",
@@ -174,7 +195,8 @@
       "breakdown": {
         "NLH": 3373
       },
-      "score": 3373
+      "score": 3373,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "A計畫",
@@ -187,23 +209,26 @@
         "NLH": 2155,
         "MAU BINH": 1547
       },
-      "score": 3083.2
+      "score": 3083.2,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "GalaGala7777",
       "id": 826237,
       "clubs": [
         "花順龍北🌸",
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 4674,
+      "totalHands": 4842,
       "breakdown": {
         "NLH": 2026,
         "AoF": 1381,
         "MAU BINH": 990,
         "十三支": 34
       },
-      "score": 3054.7
+      "score": 3054.7,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "安安妳好",
@@ -215,7 +240,8 @@
       "breakdown": {
         "NLH": 2679
       },
-      "score": 2679
+      "score": 2679,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Vivian",
@@ -228,7 +254,8 @@
         "NLH": 1844,
         "PLO6": 685
       },
-      "score": 2529
+      "score": 2529,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "godurr",
@@ -240,7 +267,8 @@
       "breakdown": {
         "AoF": 7305
       },
-      "score": 2191.5
+      "score": 2191.5,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "IG:Chen茗",
@@ -253,7 +281,8 @@
         "AoF": 6570,
         "MAU BINH": 1
       },
-      "score": 1971.6
+      "score": 1971.6,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "LKDCC77",
@@ -265,7 +294,8 @@
       "breakdown": {
         "NLH": 1812
       },
-      "score": 1812
+      "score": 1812,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "poker killer",
@@ -281,7 +311,8 @@
         "PLO6": 3,
         "OFC": 5
       },
-      "score": 1778.6
+      "score": 1778.6,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "ほさん。",
@@ -293,19 +324,22 @@
       "breakdown": {
         "NLH": 1680
       },
-      "score": 1680
+      "score": 1680,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "GG思密達",
       "id": 884326,
       "clubs": [
-        "花順龍北🌸"
+        "花順龍北🌸",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 1609,
+      "totalHands": 1615,
       "breakdown": {
         "NLH": 1609
       },
-      "score": 1609
+      "score": 1609,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Turtle",
@@ -317,7 +351,8 @@
       "breakdown": {
         "NLH": 1576
       },
-      "score": 1576
+      "score": 1576,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "風若起草枝擺",
@@ -332,7 +367,8 @@
         "PLO4": 66,
         "PLO6": 4
       },
-      "score": 1565.3
+      "score": 1565.3,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Jazz0220",
@@ -344,20 +380,23 @@
       "breakdown": {
         "NLH": 1398
       },
-      "score": 1398
+      "score": 1398,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "旺手回春🧧",
       "id": 2605950,
       "clubs": [
         "花順龍北🌸",
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 1420,
+      "totalHands": 1423,
       "breakdown": {
         "NLH": 1296
       },
-      "score": 1296
+      "score": 1296,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "silo18",
@@ -369,7 +408,24 @@
       "breakdown": {
         "NLH": 1264
       },
-      "score": 1264
+      "score": 1264,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "🪶CHRONIC🧪",
+      "id": 2760743,
+      "clubs": [
+        "花順龍北🌸",
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 2008,
+      "breakdown": {
+        "NLH": 736,
+        "AoF": 222,
+        "MAU BINH": 611
+      },
+      "score": 1169.2,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "啊？又被壓制..",
@@ -381,7 +437,8 @@
       "breakdown": {
         "NLH": 1154
       },
-      "score": 1154
+      "score": 1154,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "PENGUIN",
@@ -397,21 +454,8 @@
         "PLO5": 1,
         "PLO6": 167
       },
-      "score": 1153.4
-    },
-    {
-      "name": "🪶CHRONIC🧪",
-      "id": 2760743,
-      "clubs": [
-        "花順龍北🌸"
-      ],
-      "totalHands": 1521,
-      "breakdown": {
-        "NLH": 688,
-        "AoF": 222,
-        "MAU BINH": 611
-      },
-      "score": 1121.2
+      "score": 1153.4,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "我是耿鬼",
@@ -428,7 +472,8 @@
         "OFC": 62,
         "MAU BINH": 48
       },
-      "score": 1099.1000000000001
+      "score": 1099.1000000000001,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "陳韋達",
@@ -442,7 +487,8 @@
         "NLH": 1057,
         "OFC": 24
       },
-      "score": 1073.8
+      "score": 1073.8,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "IG\\thr:_gvpoker_",
@@ -454,7 +500,8 @@
       "breakdown": {
         "NLH": 1055
       },
-      "score": 1055
+      "score": 1055,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "MJTiger",
@@ -466,7 +513,22 @@
       "breakdown": {
         "NLH": 1024
       },
-      "score": 1024
+      "score": 1024,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "逍遙自在",
+      "id": 2542383,
+      "clubs": [
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 1601,
+      "breakdown": {
+        "NLH": 103,
+        "MAU BINH": 1498
+      },
+      "score": 1001.8,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "haixpxne",
@@ -478,7 +540,8 @@
       "breakdown": {
         "NLH": 890
       },
-      "score": 890
+      "score": 890,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "大肥魚",
@@ -492,22 +555,25 @@
         "AoF": 2159,
         "NLH": 217
       },
-      "score": 864.6999999999999
+      "score": 864.6999999999999,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "差破克",
       "id": 2775605,
       "clubs": [
-        "花順龍北🌸"
+        "花順龍北🌸",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 1327,
+      "totalHands": 1391,
       "breakdown": {
         "NLH": 618,
         "AoF": 633,
         "PLO6": 22,
         "MAU BINH": 54
       },
-      "score": 862.3
+      "score": 862.3,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "嘻嘻",
@@ -520,7 +586,8 @@
         "NLH": 856,
         "OFC": 6
       },
-      "score": 860.2
+      "score": 860.2,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "送錢",
@@ -533,7 +600,22 @@
         "NLH": 587,
         "AoF": 603
       },
-      "score": 767.9
+      "score": 767.9,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "XP1695714",
+      "id": 1695714,
+      "clubs": [
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 1215,
+      "breakdown": {
+        "MAU BINH": 1171,
+        "NLH": 44
+      },
+      "score": 746.6,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "XP3439401",
@@ -545,7 +627,23 @@
       "breakdown": {
         "AoF": 2372
       },
-      "score": 711.6
+      "score": 711.6,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "海盜船長",
+      "id": 2861873,
+      "clubs": [
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 1533,
+      "breakdown": {
+        "NLH": 303,
+        "AoF": 1135,
+        "PLO6": 16,
+        "MAU BINH": 28
+      },
+      "score": 676.3
     },
     {
       "name": "𝑾𝒆𝒊",
@@ -557,7 +655,8 @@
       "breakdown": {
         "NLH": 674
       },
-      "score": 674
+      "score": 674,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "wxy kevin",
@@ -574,7 +673,24 @@
         "MAU BINH": 476,
         "OFC": 7
       },
-      "score": 655.7
+      "score": 655.7,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "ruotai",
+      "id": 893697,
+      "clubs": [
+        "花順龍北🌸",
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 1121,
+      "breakdown": {
+        "NLH": 49,
+        "AoF": 182,
+        "MAU BINH": 890
+      },
+      "score": 637.5999999999999,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "XP6886",
@@ -587,7 +703,8 @@
         "NLH": 398,
         "MAU BINH": 306
       },
-      "score": 581.6
+      "score": 581.6,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "XP3436454",
@@ -599,19 +716,22 @@
       "breakdown": {
         "AoF": 1705
       },
-      "score": 511.5
+      "score": 511.5,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "你的男孩安弟",
       "id": 3087159,
       "clubs": [
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 720,
+      "totalHands": 790,
       "breakdown": {
         "NLH": 488
       },
-      "score": 488
+      "score": 488,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Xpoker",
@@ -624,20 +744,8 @@
         "NLH": 282,
         "MAU BINH": 335
       },
-      "score": 483
-    },
-    {
-      "name": "逍遙自在",
-      "id": 2542383,
-      "clubs": [
-        "寶島龍北🇹🇼"
-      ],
-      "totalHands": 741,
-      "breakdown": {
-        "NLH": 81,
-        "MAU BINH": 660
-      },
-      "score": 477
+      "score": 483,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "pinlunchen",
@@ -649,7 +757,8 @@
       "breakdown": {
         "NLH": 464
       },
-      "score": 464
+      "score": 464,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "圓夢大師",
@@ -663,7 +772,8 @@
         "AoF": 5,
         "MAU BINH": 27
       },
-      "score": 447.7
+      "score": 447.7,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Bịp BD",
@@ -676,7 +786,8 @@
         "NLH": 292,
         "MAU BINH": 179
       },
-      "score": 399.4
+      "score": 399.4,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "好衰",
@@ -692,21 +803,8 @@
         "PLO6": 14,
         "OFC": 75
       },
-      "score": 393.2
-    },
-    {
-      "name": "ruotai",
-      "id": 893697,
-      "clubs": [
-        "花順龍北🌸"
-      ],
-      "totalHands": 684,
-      "breakdown": {
-        "NLH": 49,
-        "AoF": 162,
-        "MAU BINH": 473
-      },
-      "score": 381.4
+      "score": 393.2,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "LuckyOnly",
@@ -718,7 +816,8 @@
       "breakdown": {
         "NLH": 376
       },
-      "score": 376
+      "score": 376,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "CaiCai",
@@ -731,7 +830,8 @@
       "breakdown": {
         "NLH": 367
       },
-      "score": 367
+      "score": 367,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Durrrr",
@@ -744,7 +844,8 @@
       "breakdown": {
         "NLH": 341
       },
-      "score": 341
+      "score": 341,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Afuuuu",
@@ -756,7 +857,8 @@
       "breakdown": {
         "NLH": 333
       },
-      "score": 333
+      "score": 333,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "哲仁不扎眼",
@@ -765,11 +867,12 @@
         "寶島龍北🇹🇼",
         "黑海龍北♠️"
       ],
-      "totalHands": 406,
+      "totalHands": 440,
       "breakdown": {
         "NLH": 333
       },
-      "score": 333
+      "score": 333,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "幸運智多星",
@@ -781,20 +884,36 @@
       "breakdown": {
         "NLH": 315
       },
-      "score": 315
+      "score": 315,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "派大星",
       "id": 2181004,
       "clubs": [
-        "花順龍北🌸"
+        "花順龍北🌸",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 344,
+      "totalHands": 359,
       "breakdown": {
         "NLH": 285,
         "AoF": 59
       },
-      "score": 302.7
+      "score": 302.7,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "好啊蓋不掉啦",
+      "id": 3131803,
+      "clubs": [
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 298,
+      "breakdown": {
+        "NLH": 298
+      },
+      "score": 298,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "林冠乳運",
@@ -806,7 +925,8 @@
       "breakdown": {
         "NLH": 295
       },
-      "score": 295
+      "score": 295,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "子王",
@@ -819,31 +939,8 @@
         "NLH": 182,
         "AoF": 226
       },
-      "score": 249.8
-    },
-    {
-      "name": "XP1695714",
-      "id": 1695714,
-      "clubs": [
-        "寶島龍北🇹🇼"
-      ],
-      "totalHands": 384,
-      "breakdown": {
-        "MAU BINH": 384
-      },
-      "score": 230.39999999999998
-    },
-    {
-      "name": "好啊蓋不掉啦",
-      "id": 3131803,
-      "clubs": [
-        "寶島龍北🇹🇼"
-      ],
-      "totalHands": 195,
-      "breakdown": {
-        "NLH": 195
-      },
-      "score": 195
+      "score": 249.8,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "xddddd",
@@ -855,7 +952,8 @@
       "breakdown": {
         "AoF": 645
       },
-      "score": 193.5
+      "score": 193.5,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Andrew schulz",
@@ -868,7 +966,8 @@
         "NLH": 98,
         "MAU BINH": 157
       },
-      "score": 192.2
+      "score": 192.2,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "qun3hf",
@@ -880,7 +979,8 @@
       "breakdown": {
         "AoF": 620
       },
-      "score": 186
+      "score": 186,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "營養老吉掰",
@@ -892,7 +992,21 @@
       "breakdown": {
         "AoF": 581
       },
-      "score": 174.29999999999998
+      "score": 174.29999999999998,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "賊賊狗勾",
+      "id": 1730203,
+      "clubs": [
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 174,
+      "breakdown": {
+        "NLH": 174
+      },
+      "score": 174,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "詹皇",
@@ -904,7 +1018,8 @@
       "breakdown": {
         "NLH": 161
       },
-      "score": 161
+      "score": 161,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Huo Guo",
@@ -916,7 +1031,8 @@
       "breakdown": {
         "NLH": 153
       },
-      "score": 153
+      "score": 153,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "藍迪",
@@ -928,7 +1044,8 @@
       "breakdown": {
         "NLH": 147
       },
-      "score": 147
+      "score": 147,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "八方德順運財",
@@ -940,7 +1057,8 @@
       "breakdown": {
         "NLH": 134
       },
-      "score": 134
+      "score": 134,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "AllDWIN",
@@ -953,7 +1071,8 @@
         "NLH": 75,
         "MAU BINH": 90
       },
-      "score": 129
+      "score": 129,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "sheep ass",
@@ -965,7 +1084,8 @@
       "breakdown": {
         "NLH": 128
       },
-      "score": 128
+      "score": 128,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "LKDCC88",
@@ -977,20 +1097,23 @@
       "breakdown": {
         "NLH": 121
       },
-      "score": 121
+      "score": 121,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "WowwwBom",
       "id": 3391265,
       "clubs": [
         "花順龍北🌸",
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 543,
+      "totalHands": 624,
       "breakdown": {
         "NLH": 120
       },
-      "score": 120
+      "score": 120,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Anguisj",
@@ -1002,7 +1125,8 @@
       "breakdown": {
         "NLH": 117
       },
-      "score": 117
+      "score": 117,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "歐印小王子",
@@ -1014,7 +1138,24 @@
       "breakdown": {
         "NLH": 110
       },
-      "score": 110
+      "score": 110,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "打牌全靠賽",
+      "id": 3062086,
+      "clubs": [
+        "花順龍北🌸",
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 1192,
+      "breakdown": {
+        "NLH": 49,
+        "AoF": 172
+      },
+      "score": 100.6,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "WeiCen",
@@ -1027,7 +1168,8 @@
         "NLH": 91,
         "AoF": 27
       },
-      "score": 99.1
+      "score": 99.1,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Ethan69",
@@ -1039,7 +1181,8 @@
       "breakdown": {
         "NLH": 97
       },
-      "score": 97
+      "score": 97,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "XP3400501",
@@ -1051,33 +1194,8 @@
       "breakdown": {
         "NLH": 90
       },
-      "score": 90
-    },
-    {
-      "name": "打牌全靠賽",
-      "id": 3062086,
-      "clubs": [
-        "花順龍北🌸",
-        "黑海龍北♠️"
-      ],
-      "totalHands": 846,
-      "breakdown": {
-        "NLH": 49,
-        "AoF": 135
-      },
-      "score": 89.5
-    },
-    {
-      "name": "賊賊狗勾",
-      "id": 1730203,
-      "clubs": [
-        "寶島龍北🇹🇼"
-      ],
-      "totalHands": 89,
-      "breakdown": {
-        "NLH": 89
-      },
-      "score": 89
+      "score": 90,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "長期盈利",
@@ -1090,7 +1208,8 @@
       "breakdown": {
         "NLH": 87
       },
-      "score": 87
+      "score": 87,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "土狗幫猛猛",
@@ -1103,7 +1222,8 @@
         "AoF": 243,
         "MAU BINH": 22
       },
-      "score": 86.1
+      "score": 86.1,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Salbona",
@@ -1115,7 +1235,8 @@
       "breakdown": {
         "NLH": 75
       },
-      "score": 75
+      "score": 75,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "抽獎旭zzz",
@@ -1128,7 +1249,8 @@
       "breakdown": {
         "NLH": 62
       },
-      "score": 62
+      "score": 62,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "烘乾烙雖",
@@ -1140,7 +1262,8 @@
       "breakdown": {
         "NLH": 49
       },
-      "score": 49
+      "score": 49,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "辛棄疾",
@@ -1153,7 +1276,8 @@
       "breakdown": {
         "NLH": 43
       },
-      "score": 43
+      "score": 43,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "umeya_llvl",
@@ -1165,7 +1289,8 @@
       "breakdown": {
         "NLH": 43
       },
-      "score": 43
+      "score": 43,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "湊組數的",
@@ -1177,7 +1302,20 @@
       "breakdown": {
         "NLH": 42
       },
-      "score": 42
+      "score": 42,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "eric li",
+      "id": 2829023,
+      "clubs": [
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 333,
+      "breakdown": {
+        "NLH": 39
+      },
+      "score": 39
     },
     {
       "name": "Zsxhhh",
@@ -1189,7 +1327,8 @@
       "breakdown": {
         "AoF": 125
       },
-      "score": 37.5
+      "score": 37.5,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "左青龍下白虎",
@@ -1201,7 +1340,8 @@
       "breakdown": {
         "NLH": 37
       },
-      "score": 37
+      "score": 37,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "林北來all in",
@@ -1213,7 +1353,8 @@
       "breakdown": {
         "NLH": 32
       },
-      "score": 32
+      "score": 32,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "我是",
@@ -1225,7 +1366,8 @@
       "breakdown": {
         "NLH": 29
       },
-      "score": 29
+      "score": 29,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "XP2853734",
@@ -1237,7 +1379,8 @@
       "breakdown": {
         "NLH": 27
       },
-      "score": 27
+      "score": 27,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "閃開點我來",
@@ -1249,7 +1392,8 @@
       "breakdown": {
         "NLH": 26
       },
-      "score": 26
+      "score": 26,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "歐印囉",
@@ -1262,7 +1406,8 @@
         "NLH": 13,
         "AoF": 42
       },
-      "score": 25.6
+      "score": 25.6,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "大老二王子",
@@ -1274,19 +1419,22 @@
       "breakdown": {
         "NLH": 25
       },
-      "score": 25
+      "score": 25,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "歪死你",
       "id": 2938494,
       "clubs": [
-        "花順龍北🌸"
+        "花順龍北🌸",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 151,
+      "totalHands": 221,
       "breakdown": {
         "AoF": 60
       },
-      "score": 18
+      "score": 18,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Jacky Zheng",
@@ -1298,7 +1446,8 @@
       "breakdown": {
         "NLH": 18
       },
-      "score": 18
+      "score": 18,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Vickyyy",
@@ -1311,7 +1460,8 @@
         "AoF": 2,
         "MAU BINH": 20
       },
-      "score": 12.6
+      "score": 12.6,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Cxy5588",
@@ -1323,7 +1473,8 @@
       "breakdown": {
         "MAU BINH": 15
       },
-      "score": 9
+      "score": 9,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "一介草民",
@@ -1335,7 +1486,8 @@
       "breakdown": {
         "AoF": 19
       },
-      "score": 5.7
+      "score": 5.7,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Retail",
@@ -1347,7 +1499,46 @@
       "breakdown": {
         "AoF": 15
       },
-      "score": 4.5
+      "score": 4.5,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "Gary8487",
+      "id": 2934663,
+      "clubs": [
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 379,
+      "breakdown": {
+        "NLH": 4
+      },
+      "score": 4
+    },
+    {
+      "name": "打牌靠賽輕鬆",
+      "id": 3177125,
+      "clubs": [
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 445,
+      "breakdown": {
+        "NLH": 3
+      },
+      "score": 3,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "xinyao",
+      "id": 2942336,
+      "clubs": [
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 3,
+      "breakdown": {
+        "NLH": 3
+      },
+      "score": 3
     },
     {
       "name": "apiuoo",
@@ -1359,7 +1550,8 @@
       "breakdown": {
         "AoF": 8
       },
-      "score": 2.4
+      "score": 2.4,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "starhand123",
@@ -1372,7 +1564,8 @@
       "breakdown": {
         "AoF": 6
       },
-      "score": 1.7999999999999998
+      "score": 1.7999999999999998,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "我AA都秒蓋",
@@ -1384,7 +1577,8 @@
       "breakdown": {
         "AoF": 4
       },
-      "score": 1.2
+      "score": 1.2,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "不適合打撲克",
@@ -1397,7 +1591,8 @@
       "breakdown": {
         "AoF": 3
       },
-      "score": 0.8999999999999999
+      "score": 0.8999999999999999,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "cczzzzz",
@@ -1408,18 +1603,21 @@
       ],
       "totalHands": 730,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "小貓國王",
       "id": 3353569,
       "clubs": [
         "花順龍北🌸",
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 277,
+      "totalHands": 346,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "我要上車了",
@@ -1429,7 +1627,8 @@
       ],
       "totalHands": 32,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "prattLiao",
@@ -1439,29 +1638,34 @@
       ],
       "totalHands": 15,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "我是魚",
       "id": 2185202,
       "clubs": [
         "花順龍北🌸",
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 391,
+      "totalHands": 865,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "跑馬王",
       "id": 3248612,
       "clubs": [
         "花順龍北🌸",
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 145,
+      "totalHands": 487,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "烏薩奇lol",
@@ -1471,7 +1675,8 @@
       ],
       "totalHands": 43,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "L先生",
@@ -1481,7 +1686,8 @@
       ],
       "totalHands": 0,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "防火金紙",
@@ -1491,7 +1697,8 @@
       ],
       "totalHands": 0,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "allin我蓋",
@@ -1501,7 +1708,8 @@
       ],
       "totalHands": 0,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "ChenChen",
@@ -1511,7 +1719,8 @@
       ],
       "totalHands": 0,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "吻雨後的寂靜",
@@ -1521,7 +1730,8 @@
       ],
       "totalHands": 0,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "fatfish",
@@ -1531,7 +1741,8 @@
       ],
       "totalHands": 0,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "歪到抱歉",
@@ -1541,7 +1752,8 @@
       ],
       "totalHands": 0,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "27土地公",
@@ -1551,7 +1763,8 @@
       ],
       "totalHands": 0,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "uxii92",
@@ -1561,7 +1774,8 @@
       ],
       "totalHands": 0,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Javatim",
@@ -1571,7 +1785,8 @@
       ],
       "totalHands": 98,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "李承禹",
@@ -1581,7 +1796,8 @@
       ],
       "totalHands": 313,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Han .",
@@ -1591,7 +1807,8 @@
       ],
       "totalHands": 511,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "XP090101",
@@ -1601,7 +1818,8 @@
       ],
       "totalHands": 350,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "送頭元",
@@ -1611,7 +1829,8 @@
       ],
       "totalHands": 729,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "送頭恩",
@@ -1621,7 +1840,8 @@
       ],
       "totalHands": 336,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "doremi-AA",
@@ -1631,7 +1851,8 @@
       ],
       "totalHands": 131,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "XG22543",
@@ -1641,7 +1862,8 @@
       ],
       "totalHands": 570,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "steven",
@@ -1651,7 +1873,8 @@
       ],
       "totalHands": 243,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "fishman",
@@ -1661,17 +1884,20 @@
       ],
       "totalHands": 119,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "靠賽打德撲",
       "id": 2667031,
       "clubs": [
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 56,
+      "totalHands": 163,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "你爸",
@@ -1681,7 +1907,8 @@
       ],
       "totalHands": 116,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "而且我是一隻",
@@ -1691,7 +1918,8 @@
       ],
       "totalHands": 36,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Akira*",
@@ -1701,7 +1929,8 @@
       ],
       "totalHands": 3,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "zzhennnn",
@@ -1711,7 +1940,8 @@
       ],
       "totalHands": 139,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "童童",
@@ -1721,7 +1951,8 @@
       ],
       "totalHands": 71,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "愛德",
@@ -1731,7 +1962,8 @@
       ],
       "totalHands": 1,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Darling02",
@@ -1741,7 +1973,8 @@
       ],
       "totalHands": 2,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "抽獎M",
@@ -1751,7 +1984,8 @@
       ],
       "totalHands": 27,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "旭寶上頭怪",
@@ -1761,7 +1995,8 @@
       ],
       "totalHands": 65,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "VanNess_Wu",
@@ -1771,17 +2006,20 @@
       ],
       "totalHands": 10,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "小翔👺",
       "id": 2718540,
       "clubs": [
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 85,
+      "totalHands": 100,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "175 ⋆𐙚₊˚⊹",
@@ -1791,17 +2029,20 @@
       ],
       "totalHands": 35,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "wen…",
       "id": 3064450,
       "clubs": [
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 118,
+      "totalHands": 800,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Dnnnnn",
@@ -1811,7 +2052,8 @@
       ],
       "totalHands": 50,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "鹹魚翻身",
@@ -1821,17 +2063,20 @@
       ],
       "totalHands": 25,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Doufish",
       "id": 3315015,
       "clubs": [
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 469,
+      "totalHands": 628,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "希斯萊傑",
@@ -1841,17 +2086,20 @@
       ],
       "totalHands": 15,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "fisherman",
       "id": 3422284,
       "clubs": [
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 231,
+      "totalHands": 666,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "剛好有牌",
@@ -1861,7 +2109,8 @@
       ],
       "totalHands": 42,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "cyunnnn",
@@ -1871,7 +2120,8 @@
       ],
       "totalHands": 439,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "吳亦凡",
@@ -1881,17 +2131,20 @@
       ],
       "totalHands": 319,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "康彥劉",
       "id": 3435432,
       "clubs": [
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 279,
+      "totalHands": 330,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "彥宏郭",
@@ -1901,7 +2154,8 @@
       ],
       "totalHands": 924,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "再誇張一點沒",
@@ -1911,7 +2165,8 @@
       ],
       "totalHands": 129,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Seidseid",
@@ -1921,7 +2176,8 @@
       ],
       "totalHands": 211,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "歪爆你",
@@ -1931,7 +2187,8 @@
       ],
       "totalHands": 1,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "raceking",
@@ -1941,7 +2198,8 @@
       ],
       "totalHands": 7,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "김유현의남자",
@@ -1951,7 +2209,8 @@
       ],
       "totalHands": 93,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "killerking",
@@ -1961,17 +2220,20 @@
       ],
       "totalHands": 249,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "芳陞廖",
       "id": 2882665,
       "clubs": [
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 22,
+      "totalHands": 42,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "cliiuu___",
@@ -1981,7 +2243,8 @@
       ],
       "totalHands": 309,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Elson Toh",
@@ -1991,7 +2254,8 @@
       ],
       "totalHands": 39,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "ChYsieNgH",
@@ -2001,7 +2265,8 @@
       ],
       "totalHands": 242,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "陶安安",
@@ -2011,7 +2276,8 @@
       ],
       "totalHands": 170,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "啊典",
@@ -2021,7 +2287,8 @@
       ],
       "totalHands": 30,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Chang Yan",
@@ -2031,7 +2298,8 @@
       ],
       "totalHands": 10,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "翰翰",
@@ -2041,7 +2309,8 @@
       ],
       "totalHands": 78,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Kevin Lin",
@@ -2051,7 +2320,8 @@
       ],
       "totalHands": 29,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "安爸",
@@ -2061,7 +2331,8 @@
       ],
       "totalHands": 163,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Btwopp",
@@ -2071,7 +2342,8 @@
       ],
       "totalHands": 27,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "雞槌",
@@ -2081,7 +2353,8 @@
       ],
       "totalHands": 2,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "特上奶茶",
@@ -2091,7 +2364,8 @@
       ],
       "totalHands": 16,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "柴柴All in妳",
@@ -2101,7 +2375,8 @@
       ],
       "totalHands": 266,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "小丑-13",
@@ -2111,7 +2386,8 @@
       ],
       "totalHands": 50,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "X",
@@ -2121,7 +2397,8 @@
       ],
       "totalHands": 52,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "來繳學費的",
@@ -2131,7 +2408,8 @@
       ],
       "totalHands": 15,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Anderson",
@@ -2141,7 +2419,8 @@
       ],
       "totalHands": 77,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Legolas",
@@ -2151,7 +2430,8 @@
       ],
       "totalHands": 2,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "有屎有中",
@@ -2161,7 +2441,8 @@
       ],
       "totalHands": 33,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "豆花",
@@ -2171,7 +2452,8 @@
       ],
       "totalHands": 200,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "小豪-魚玩家",
@@ -2181,47 +2463,44 @@
       ],
       "totalHands": 46,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "跑馬沒贏過",
       "id": 3263970,
       "clubs": [
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 26,
+      "totalHands": 103,
       "breakdown": {},
-      "score": 0
-    },
-    {
-      "name": "打牌靠賽輕鬆",
-      "id": 3177125,
-      "clubs": [
-        "黑海龍北♠️"
-      ],
-      "totalHands": 6,
-      "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "跑馬王中王",
       "id": 3279915,
       "clubs": [
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 8,
+      "totalHands": 405,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "跑馬皇",
       "id": 3302312,
       "clubs": [
-        "黑海龍北♠️"
+        "黑海龍北♠️",
+        "寶島龍北🇹🇼"
       ],
-      "totalHands": 7,
+      "totalHands": 269,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Stinky Fish🐟",
@@ -2231,7 +2510,8 @@
       ],
       "totalHands": 69,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Jia Fong Liao",
@@ -2241,7 +2521,8 @@
       ],
       "totalHands": 4,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "大頭鯊",
@@ -2251,7 +2532,8 @@
       ],
       "totalHands": 13,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "Jana Ja",
@@ -2261,7 +2543,8 @@
       ],
       "totalHands": 10,
       "breakdown": {},
-      "score": 0
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
     },
     {
       "name": "這遊戲感覺很",
@@ -2270,6 +2553,27 @@
         "黑海龍北♠️"
       ],
       "totalHands": 1,
+      "breakdown": {},
+      "score": 0,
+      "lastUpdate": "2025-06-15T20:48:27.519Z"
+    },
+    {
+      "name": "只玩AAKK",
+      "id": 2900155,
+      "clubs": [
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 274,
+      "breakdown": {},
+      "score": 0
+    },
+    {
+      "name": "DJXXNXB888",
+      "id": 3245898,
+      "clubs": [
+        "寶島龍北🇹🇼"
+      ],
+      "totalHands": 153,
       "breakdown": {},
       "score": 0
     }
